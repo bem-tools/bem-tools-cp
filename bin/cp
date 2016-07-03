@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+'use strict';
+// Do not limit stack trace
+Error.stackTraceLimit = Infinity;
+
+require('coa').Cmd()
+    .name('cp').apply(require('../cli.js')).end()
+    .run();
