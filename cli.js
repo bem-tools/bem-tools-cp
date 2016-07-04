@@ -25,6 +25,6 @@ module.exports = function() {
             .arr()
         .end()
         .act((opts, args) => {
-            return cp(args.source, args.destination, opts.level);
+            cp(args.source, args.destination, opts.level);
         });
 };
