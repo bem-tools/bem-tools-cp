@@ -8,7 +8,9 @@ describe('destinator', () => {
         it('for copy block file on the same level', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
+                entity: {
+                    block: 'block1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block2';
@@ -19,8 +21,10 @@ describe('destinator', () => {
 
         it('for copy block file to another level', () => {
             const source = {
-                level: 'common.blocks',
-                block: 'block1',
+                entity: {
+                    level: 'common.blocks',
+                    block: 'block1'
+                },
                 tech: 'js'
             };
             const destination = 'desktop.blocks/block2';
@@ -32,8 +36,10 @@ describe('destinator', () => {
         it('for copy element file to another element inside one block', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                elem: 'elem1',
+                entity: {
+                    block: 'block1',
+                    elem: 'elem1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block1__elem2';
@@ -45,8 +51,10 @@ describe('destinator', () => {
         it('for copy element file between different blocks', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                elem: 'elem1',
+                entity: {
+                    block: 'block1',
+                    elem: 'elem1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block2__elem2';
@@ -58,9 +66,11 @@ describe('destinator', () => {
         it('for copy block logical modifier to another modifier inside one block', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                modName: 'mod1',
-                modVal: true,
+                entity: {
+                    block: 'block1',
+                    modName: 'mod1',
+                    modVal: true
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block1_mod2';
@@ -72,9 +82,11 @@ describe('destinator', () => {
         it('for copy block logical modifier from one block to another', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                modName: 'mod1',
-                modVal: true,
+                entity: {
+                    block: 'block1',
+                    modName: 'mod1',
+                    modVal: true
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block2_mod2';
@@ -86,9 +98,11 @@ describe('destinator', () => {
         it('for copy block modifier value file to another modifier inside one block', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                modName: 'mod1',
-                modVal: 'val1',
+                entity: {
+                    block: 'block1',
+                    modName: 'mod1',
+                    modVal: 'val1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block1_mod2';
@@ -100,9 +114,11 @@ describe('destinator', () => {
         it('for copy block modifier value file to another block modifier', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                modName: 'mod1',
-                modVal: 'val1',
+                entity: {
+                    block: 'block1',
+                    modName: 'mod1',
+                    modVal: 'val1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block2_mod2';
@@ -114,10 +130,12 @@ describe('destinator', () => {
         it('for copy block element modifier inside one element', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                elem: 'elem1',
-                modName: 'mod1',
-                modVal: 'val1',
+                entity: {
+                    block: 'block1',
+                    elem: 'elem1',
+                    modName: 'mod1',
+                    modVal: 'val1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block1__elem1_mod2_val2';
@@ -129,10 +147,12 @@ describe('destinator', () => {
         it('for copy block element modifier between two elements of the same block', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                elem: 'elem1',
-                modName: 'mod1',
-                modVal: 'val1',
+                entity: {
+                    block: 'block1',
+                    elem: 'elem1',
+                    modName: 'mod1',
+                    modVal: 'val1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block1__elem2';
@@ -144,10 +164,12 @@ describe('destinator', () => {
         it('for copy block element modifier to another element of another block', () => {
             const source = {
                 level: 'common.blocks',
-                block: 'block1',
-                elem: 'elem1',
-                modName: 'mod1',
-                modVal: 'val1',
+                entity: {
+                    block: 'block1',
+                    elem: 'elem1',
+                    modName: 'mod1',
+                    modVal: 'val1'
+                },
                 tech: 'js'
             };
             const destination = 'common.blocks/block2__elem2_mod2_val2';
