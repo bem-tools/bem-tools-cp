@@ -113,32 +113,63 @@ bem-tools cp block1__elem1 block2__elem2
 
 Copy block modifier inside one block:
 ```
-bem-tools cp block1__mod1 block1_mod2
+bem-tools cp block1_mod1 block1_mod2
 ```
 
 Copy block modifier value inside the on of the block modifiers:
 ```
-bem-tools cp block1__mod1_val1 block1_mod1_val2
+bem-tools cp block1_mod1_val1 block1_mod1_val2
 ```
 
 Copy block modifier value to another modifier of the same block
 ```
-bem-tools cp block1__mod1_val1 block1_mod2
+bem-tools cp block1_mod1_val1 block1_mod2
 ```
 or (with renaming modifier value):
 ```
-bem-tools cp block1__mod1_val1 block1_mod2_val2
+bem-tools cp block1_mod1_val1 block1_mod2_val2
 ```
 
 Copy block modifier to another block:
 ```
-bem-tools cp block1__mod1 block2_mod1
+bem-tools cp block1_mod1 block2_mod1
 ```
 or (with renaming modifier name):
 ```
-bem-tools cp block1__mod1 block2_mod2
+bem-tools cp block1_mod1 block2_mod2
+```
+
+Copy block element modifier to another element inside one block
+```
+bem-tools cp block1_elem1_mod1 block1__elem1_mod2
+```
+
+Copy block element modifier value
+```
+bem-tools cp block1_elem1_mod1_value1 block1__elem1_mod1_value2
+```
+
+Copy block element modifier to element from the second block
+```
+bem-tools cp block1_elem1_mod1 block2__elem2
+```
+or (with renaming modifier)
+```
+bem-tools cp block1_elem1_mod1 block2__elem2_mod2
 ```
 
 ## API usage
+
+BEM Tools cp also can be used from JS API
+
+Example:
+```
+const cp = require('bem-tools-cp');
+
+cp('common.blocks/block1', 'block2', ['desktop.blocks', 'touch-pad.blocks'])
+    .then((entities) => {
+        console.log(entities);
+    });
+```
 
 ## Contributing
