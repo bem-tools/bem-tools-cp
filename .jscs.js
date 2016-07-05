@@ -60,6 +60,5 @@ module.exports = {
         checkTypes: 'capitalizedNativeCase',
         leadingUnderscoreAccess: true
     },
-    maxErrors: 1000,
-    esnext: true
+    maxErrors: 1000
 };
